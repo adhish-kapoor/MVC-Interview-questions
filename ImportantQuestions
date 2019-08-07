@@ -1,0 +1,55 @@
+1.Output caching in MVC--> prevents same content to be generated each time controller method is invoked 
+2.Display mode in MVC--> for having an alternative view
+3.Default route in MVC--> URL:{controller}/{action}/{id}
+
+4.MVC application cycle
+-->creating the request object and second sending our response to the browser.
+
+Creating the request object includes four basic steps: 
+
+Step 1: Fill route
+Step 2: Fetch route
+Step 3: Request context created
+Step 4: Controller instance created 
+
+5.Action filters
+-->Action Filters are additional attributes that can be applied to either a controller section or the entire controller to modify the way in which action is executed. 
+These attributes are special .NET classes derived from system attributes, which can be attached to classes, methods, properties, and fields.
+
+6.Routing 
+--> Routing is a mechanism to process the incoming URL that is more descriptive and gives the desired response. 
+In this case, URL is not mapped to specific files or folder, as was the case of websites in the past.
+
+7.Partial view
+--> A partial view is a chunk of HTML that can be safely inserted into an existing DOM. 
+Most commonly, partial views are used to componentize Razor views and make them easier to build and update. 
+Partial views can also be returned directly from controller methods. 
+In this case, the browser still receives text/HTML content but not necessarily HTML content that makes up an entire page. 
+As a result, if a URL that returns a partial view is directly invoked from the address bar of a browser, an incomplete page may be displayed. 
+This may be something like a page that misses title, script and style sheets.
+
+8.TempData 
+--> TempData is a dictionary object to store data temporarily. 
+It is a TempDataDictionary class type and instance property of the Controller base class. 
+TempData can keep data for the duration of an HTTP request; in other words, it can keep live data between two consecutive HTTP requests.
+It will help us to pass the state between action methods. 
+TempData only works with the current and subsequent request.
+TempData uses a session variable to store the data. 
+TempData Requires type casting when used to retrieve data.
+
+9.Razor 
+--> SP.NET MVC has always supported the concept of “view engines” – which are the pluggable modules, which practically implement different template syntax options. 
+The “default” view engine for ASP.NET MVC uses the same .aspx/.ascx/. master file templates as ASP.NET Web Forms.
+Other popular ASP.NET MVC view engines are Spart&Nhaml. 
+Razor is the new view engine introduced by MVC 3.
+
+10.DB first approach in MVC using Entity framework
+--> Database First Approach is an alternative or substitutes to the Code First and Model First approaches to the Entity Data Model. 
+The Entity Data Model creates model codes (classes, properties, DbContext, etc.) from the database in the project and
+that class behaves as the link between database and controller.
+
+There are the following approaches, which are used to connect the database with the application.
+
+#Database First
+#Model First
+#Code First
