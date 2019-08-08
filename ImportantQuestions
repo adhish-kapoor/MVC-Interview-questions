@@ -53,3 +53,13 @@ There are the following approaches, which are used to connect the database with 
 #Database First
 #Model First
 #Code First
+
+11.Bundling and Minification
+--> Bundling and minification are two new techniques introduced to improve request load time. 
+It improves load time by reducing the number of requests to the server and reducing the size of requested assets (such as CSS and JavaScript).
+Bundling: It lets us combine multiple JavaScript (.js) files or multiple cascading style sheet (.css) files so that they can be downloaded as a unit, 
+rather than making individual HTTP requests.
+
+Minification: It extracts the whitespace and performs other types of compression to make the downloaded files as small as possible.
+At runtime, the process recognizes the agent of the user, for example, IE, Mozilla, etc. and then removes whatever is specific to Mozilla when the request comes from IE.
+
