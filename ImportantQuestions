@@ -1,4 +1,15 @@
-1.Output caching in MVC--> prevents same content to be generated each time controller method is invoked 
+1.Output caching in MVC--> prevents same content to be generated each time controller method is invoked.
+
+OutputCache label has a "Location" attribute and it is fully controllable.
+Its default value is "Any", however there are the following locations available; as of now, we can use any one.
+-Any
+-Client
+-Downstream
+-Server
+-None
+-ServerAndClient
+With "Any", the output cache is stored on the server where the request was processed. 
+
 2.Display mode in MVC--> for having an alternative view
 3.Default route in MVC--> URL:{controller}/{action}/{id}
 
