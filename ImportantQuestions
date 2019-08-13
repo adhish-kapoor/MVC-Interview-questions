@@ -63,3 +63,17 @@ rather than making individual HTTP requests.
 Minification: It extracts the whitespace and performs other types of compression to make the downloaded files as small as possible.
 At runtime, the process recognizes the agent of the user, for example, IE, Mozilla, etc. and then removes whatever is specific to Mozilla when the request comes from IE.
 
+12.Action Filters
+--> Action Filters are additional attributes that can be applied to either a controller section or the entire controller to modify the way in which action is executed.
+These attributes are special .NET classes derived from System.Attribute which can be attached to classes, methods, properties and fields.
+
+ASP.NET MVC provides the following action filters,
+#Output Cache
+This action filter caches the output of a controller action for a specified amount of time.
+
+#Handle Error
+This action filter handles errors raised when a controller action executes.
+
+#Authorize
+This action filter enables you to restrict access to a particular user or role.
+
