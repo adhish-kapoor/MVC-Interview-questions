@@ -47,3 +47,22 @@ We no longer have access to the Objects array, and we cannot use it in a loop.
 
 Iterator pattern provides a mechanism to traverse an object, irrespective of how it is internally represented.
 
+=====Boxing and unboxing
+Boxing is the process of converting a value type to the type object or to any interface type implemented by this value type.
+ Unboxing extracts the value type from the object. 
+ Boxing is implicit; unboxing is explicit.
+ The concept of boxing and unboxing underlies the C# unified view of the type system in which a value of any type can be treated as an object.
+
+ int i = 123;
+// The following line boxes i.
+object o = i;
+
+o = 123;
+i = (int)o;  // unboxing
+
+BOXING
+Boxing is used to store value types in the garbage-collected heap.
+Boxing a value type allocates an object instance on the heap and copies the value into the new object.
+    
+UNBOXING
+Unboxing is used to get value from object type.
