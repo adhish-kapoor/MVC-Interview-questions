@@ -160,3 +160,14 @@ namespace MVC3.Controllers
 -----
 ASP.NET MVC provides three ways (TempData, ViewData and ViewBag) to manage session, apart from that we can use session variable, hidden fields and HTML controls for the same.
 But like session variable these elements cannot preserve values for all requests; value persistence varies depending the flow of request.
+==========
+14.SESSION MODES IN ASP.NET:
+ASP.NET provides various Session Modes for storage of Session Data.
+->>InProc mode: This is the default Session State modes which store the session data in memory on the web server.
+->>StateServer (Out-Proc) mode: This stores the session data in separate memory called the ASP.NET Service. 
+ This mode ensures that the session data preserves when the Application Process restarts.
+->>SQL Server mode: In this mode session data is stored in the SQL Server Database. 
+ This mode also ensures that the session data preserves when the Web Application restarted. Also, this mode makes session data available to several Web Server.
+->>Custom mode: This mode enables you to specify the custom storage option.
+->>Off mode: This mode disables the session state. This increases the performance of the application.
+ 
