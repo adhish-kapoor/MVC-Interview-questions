@@ -47,6 +47,15 @@ namespace LINQSample
                                                                                                              //{Index=1, name="Bdi"}
                                                                                                              //similar for all indexes
             
+            //SelectMany is used to get multiple records from a sequence and converting it into a single sequence
+            List<string> strList = new List<string>() { "Adhish", "Kapoor" };
+            
+            var methodResult = strList.SelectMany(x => x).ToList(); //count 12, each char with ASCII code 
+
+            var queryResult = (from str in strList
+                               from ch in str
+                               select ch).ToList(); //count 12, each char with ASCII code 
+            
             foreach (var i in selectQuery)
             {
                 Console.WriteLine($"Id is {i.Id}, Name is {i.Name}, Email is {i.Email}"); //Email is null 
