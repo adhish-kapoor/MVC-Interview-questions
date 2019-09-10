@@ -61,6 +61,26 @@ namespace LINQSample
                 Console.WriteLine($"Id is {i.Id}, Name is {i.Name}, Email is {i.Email}"); //Email is null 
             }
 
+            //SelectMany for list within a list
+             var dataSource = new List<Employee>()
+            {
+                new Employee() {Id =1,Name = "A",Programming=new List<string>() { "C#","Python"} },
+                new Employee() {Id =2,Name = "B",Programming=new List<string>() { "C++","Java"} },
+                new Employee() {Id =3,Name = "C",Programming=new List<string>() { "C#","JS"} }
+            };
+
+            var methodSyntax = dataSource.SelectMany(x => x.Programming).ToList();  //count 6 (list of programming languages)
+            
+            
+            var querySyntax = (from emp in dataSource
+                               from pr in emp.Programming
+                               select pr).ToList();                                  //count 6 (list of programming languages)
+
+            foreach(var i in methodSyntax)
+            {
+                Console.WriteLine("Programming - " + i);
+            }
+            
             Console.ReadKey();
         }
     }
