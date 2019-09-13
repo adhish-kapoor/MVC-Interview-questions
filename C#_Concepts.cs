@@ -77,4 +77,77 @@ All further references to objects of the singleton class refer to the same under
 There are situations in a project where we want only one instance of the object to be created and shared among the clients. 
 No client can create an instance from outside.
 It is more appropriate than creating a global variable since this may be copied and leads to multiple access points. 
+
+=======Delegates
+A delegate is like a pointer to a function. It is a reference type data type and it holds the reference of a method.
+All the delegates are implicitly derived from System.Delegate class.
+class Program
+{
+    // declare delegate
+    public delegate void Print(int value);
+
+    static void Main(string[] args)
+    {
+        // Print delegate points to PrintNumber
+        Print printDel = PrintNumber;
+        
+        // or
+        // Print printDel = new Print(PrintNumber);
+            
+        printDel(100000);
+        printDel(200);
+
+        // Print delegate points to PrintMoney
+        printDel = PrintMoney;
+
+        printDel(10000);
+        printDel(200);
+    }
+
+    public static void PrintNumber(int num)
+    {
+        Console.WriteLine("Number: {0,-12:N0}",num);                            //Number: 100,000     
+    }                                                                           //Number: 200         
+                                                                                //Money: $10,000.00
+                                                                                //Money: $200.00 
+    public static void PrintMoney(int money)
+    {
+        Console.WriteLine("Money: {0:C}", money);
+    }
+}
+=========MultiCast Delegate
+The delegate can point to multiple methods. A delegate that points multiple methods is called a multicast delegate. 
+The "+" operator adds a function to the delegate object and the "-" operator removes an existing function from a delegate object.
     
+public delegate void Print(int value);
+
+static void Main(string[] args)
+{       
+    Print printDel = PrintNumber;
+    printDel += PrintHexadecimal;
+    printDel += PrintMoney;
+
+    printDel(1000);
+
+    printDel -=PrintHexadecimal;
+    printDel(2000);
+}
+
+public static void PrintNumber(int num)
+{
+    Console.WriteLine("Number: {0,-12:N0}",num);                                //Number: 1,000       
+                                                                                //Hexadecimal: 3E8
+                                                                                //Money: $1,000.00
+                                                                                //Number: 2,000       
+                                                                                //Money: $2,000.00
+}
+
+public static void PrintMoney(int money)
+{
+    Console.WriteLine("Money: {0:C}", money);
+}
+
+public static void PrintHexadecimal(int dec)
+{
+    Console.WriteLine("Hexadecimal: {0:X}", dec);
+}
